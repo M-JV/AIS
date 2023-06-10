@@ -8,7 +8,7 @@ def weather(request):
     else:
         city = 'Pathanamthitta'  # Default city if no form submission
 
-    api_key = 'Your_API'  # Replace with your OpenWeather API key
+    api_key = 'd0eb75cf5f3c4d62311cb94a63774801'  # Replace with your OpenWeather API key
     url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
 
     response = requests.get(url)
