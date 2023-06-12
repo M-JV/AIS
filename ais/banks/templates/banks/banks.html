@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website with Upper Bar and Dropdown Box</title>
+  <style>
+    /* Global Styles */
+    body{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Upper Bar Styles */
+    .upperbar {
+      background-color: #3498DB;
+      color: #000000;
+      padding: 1px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1px;
+    }
+    /* Box Styles */
+    .box-container {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin-bottom: 30px
+    }
+
+    .box {
+      flex-basis: 32%;
+      max-width: 500px; /* Adjust the maximum width as needed */
+      border: 1px solid #000000;
+      padding: 5px;
+    }
+
+    .box:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Bank Logo Styles */
+    .bank-logo {
+      width: 50px;
+      height: 50px;
+      display: block;
+      margin: 0 auto;
+    }
+    .navbar {
+      background-color: #9fb8d1; /* Updated lighter color */
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown-menu {
+      background-color: #007bff;
+    }
+
+    .dropdown-item {
+      color: #fff;
+    }
+
+    .dropdown-item:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">AgriGo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'about'%}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Features
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'policy' %}">Schemes</a></li>
+              <li><a class="dropdown-item" href="#">Supply Chain</a></li>
+              <li><a class="dropdown-item" href="{%url 'banks'%}">Finance</a></li>
+              <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br />
+
+
+  <div class="box-container">
+    <div class="box">
+     
+        <img class="bank-logo" src="/static/images/kvb.jpg" alt="Bank Logo">
+        <h3 style="text-align:center;">Karur Vysya Bank</h3>
+      
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Interest Rate Range</h4>
+      </div>
+      <h6 style="text-align:center;">8.30% p.a. onwards</h6>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Loan Amount</h4>
+      </div>
+      <h5 style="text-align:center;">Up to Rs.10L</h5>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Tenure Range</h4>
+      </div>
+      <h5 style="text-align:center;">Up to 3 Years</h5>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      
+        <img class="bank-logo" src="/static/images/sbi.png" alt="Bank Logo">
+        <h3 style="text-align:center;">State Bank of India</h3>
+      
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Interest Rate Range</h4>
+      </div>
+      <h6 style="text-align:center;">10% p.a. onwards</h6>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Loan Amount</h4>
+      </div>
+      <h5 style="text-align:center;">Up to Rs.15L</h5>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Tenure Range</h4>
+      </div>
+      <h5  style="text-align:center;">1-4 Years</h5>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+    
+        <img class="bank-logo" src="/static/images/citi.png" alt="Bank Logo">
+        <h3 style="text-align:center;">Citibank</h3>
+     
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4 >Interest Rate Range</h4>
+      </div>
+      <h6 style="text-align:center;">9.99% p.a. onwards</h6>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Loan Amount</h4>
+      </div>
+      <h5 style="text-align:center;">Up to Rs.30L</h5>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Tenure Range</h4>
+      </div>
+      <h5 style="text-align:center;">Upto 3 Years</h5>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      
+        <img class="bank-logo" src="/static/images/kotak.png" alt="Bank Logo">
+        <h3 style="text-align:center;">Kotak Mahindra Bank</h3>
+      
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Interest Rate Range</h4>
+      </div>
+      <h6 style="text-align:center;">10.50% p.a onwards</h6>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Loan Amount</h4>
+      </div>
+      <h5 style="text-align:center;">Up to Rs.20L</h5>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Tenure Range</h4>
+      </div>
+      <h5 style="text-align:center;">Upto 5 Years</h5>
+    </div>
+  </div>
+  <div class="box-container">
+    <div class="box">
+      
+        <img class="bank-logo" src="/static/images/indus.png" alt="Bank Logo">
+        <h3 style="text-align:center;">IndusInd Bank</h3>
+     
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Interest Rate Range</h4>
+      </div>
+      <h6 style="text-align:center;">8.25% p.a onwards</h6>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Loan Amount</h4>
+      </div>
+      <h5 style="text-align:center;">Up to Rs.40L</h5>
+    </div>
+    <div class="box">
+      <div class="upperbar">
+        <h4>Tenure Range</h4>
+      </div>
+      <h5 style="text-align:center;">1 - 5 Years</h5>
+    </div>
+  </div>
+  <script>
+    function selectDistrict(district) {
+      document.getElementById("selectedDistrict").innerText = district;
+    }
+  </script>
+</body>
+</html>

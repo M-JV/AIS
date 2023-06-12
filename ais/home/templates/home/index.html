@@ -121,7 +121,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'policy' %}">Schemes</a></li>
               <li><a class="dropdown-item" href="#">Supply Chain</a></li>
-              <li><a class="dropdown-item" href="#">Finance</a></li>
+              <li><a class="dropdown-item" href="{%url 'banks'%}">Finance</a></li>
               <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
             </ul>
           </li>
@@ -145,7 +145,7 @@
                 <p class="card-text">
                   Loan information 
                 </p>
-                <a href="#" class="btn btn-primary">Finance</a>
+                <a href="{%url 'banks'%}" class="btn btn-primary">Finance</a>
               </div>
             </div>
           </div>
