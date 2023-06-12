@@ -1,747 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
 
-    <style>
-      /* Navbar */
-      .navbar {
-        background-color: #9fb8d1; /* Updated lighter color */
-      }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-      .navbar-brand {
-        color: #fff;
-        font-weight: bold;
-      }
+  <style>
+    /* Navbar */
+    .navbar {
+      background-color: #9fb8d1;
+      /* Updated lighter color */
+    }
 
-      .navbar-nav .nav-link {
-        color: #fff;
-      }
+    .navbar-brand {
+      color: #fff;
+      font-weight: bold;
+    }
 
-      .navbar-nav .nav-link:hover {
-        color: #fff;
-        background-color: rgba(255, 255, 255, 0.1);
-      }
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
 
-      .dropdown-menu {
-        background-color: #007bff;
-      }
+    .navbar-nav .nav-link:hover {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-      .dropdown-item {
-        color: #fff;
-      }
+    .dropdown-menu {
+      background-color: #007bff;
+    }
 
-      .dropdown-item:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
+    .dropdown-item {
+      color: #fff;
+    }
 
-      /* Card */
-      .card {
-        transition: transform 0.3s;
-      }
+    .dropdown-item:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-      .card:hover {
-        transform: scale(1.03);
-      }
+    /* Card */
+    .card {
+      transition: transform 0.3s;
+    }
 
-      .button {
-        width: 100px;
-        height: 30px;
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
+    .card:hover {
+      transform: scale(1.03);
+    }
 
-      .btn-primary {
-        width: 100%;
-        height: 100%;
-        border: none;
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
+    .button {
+      width: 100px;
+      height: 30px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
 
-      .btn-primary:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
+    .btn-primary {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-      .collapse.show {
-        display: block;
-      }
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-      .card {
-        border: none;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-  </head>
+    .collapse.show {
+      display: block;
+    }
 
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Navbar -->
+    .card {
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
 
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">A.I.S</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{%url 'about'%}">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Features
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="{% url 'policy' %}">Schemes</a>
-                </li>
-                <li><a class="dropdown-item" href="#">Supply Chain</a></li>
-                <li><a class="dropdown-item" href="#">Finance</a></li>
-                <li>
-                  <a class="dropdown-item" href="{% url 'weather' %}"
-                    >Weather</a
-                  >
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <br />
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <!-- Navbar -->
 
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <!-- Buttons -->
-
-      <!-- Gutter -->
-
-      <div class="container px-4 text-center">
-        <div class="row gx-5">
-          <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="p-3">
-              <!-- National Agriculture Market (eNAM) -->
-              <p>
-                <button
-                  class="btn btn-primary btn-block"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample1"
-                  aria-expanded="false"
-                  aria-controls="collapseExample1"
-                >
-                  <p class="fw-bold">National Agriculture Market (eNAM)</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample1">
-                <div class="card card-body">
-                  <p class="fw-semibold">National Agriculture Market (eNAM)</p>
-                  is a pan-India electronic trading portal which networks the
-                  existing APMC mandis to create a unified national market for
-                  agricultural commodities. Small Farmers Agribusiness
-                  Consortium (SFAC) is the lead agency for implementing eNAM
-                  under the aegis of Ministry of Agriculture and Farmers’
-                  Welfare, Government of India.
-                  <p class="fw-bold">Vision</p>
-
-                  <ul>
-                    <li>
-                      To promote uniformity in agriculture marketing by
-                      streamlining of procedures across the integrated markets,
-                    </li>
-                    <li>
-                      Removing information asymmetry between buyers and sellers
-                      promoting real time price discovery based on actual demand
-                      and supply.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3">
-              <!-- NMSA -->
-              <p>
-                <button
-                  class="btn btn-primary btn-block"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample2"
-                  aria-expanded="false"
-                  aria-controls="collapseExample2"
-                >
-                  <p class="fw-bold">
-                    National Mission for Sustainable Agriculture (NMSA)
-                  </p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample2">
-                <div class="card card-body">
-                  <p class="fw-semibold">
-                    National Mission for Sustainable Agriculture (NMSA)
-                  </p>
-                  has been formulated for enhancing agricultural productivity
-                  especially in rainfed areas focusing on integrated farming,
-                  water use efficiency, soil health management and synergizing
-                  resource conservation.
-                  <p class="fw-bold">Vision</p>
-
-                  <ul>
-                    <li>
-                      Rainfed Area Development (RAD): RAD is being implemented
-                      by RFS Division
-                    </li>
-                    <li>
-                      Soil Health Management (SHM): SHM is being implemented by
-                      INM Division
-                    </li>
-                    <li>
-                      Paramparagat Krishi Vikas Yojana (PKVY): PKVY is being
-                      implemented by INM Division
-                    </li>
-                    <li>
-                      Soil and Land Use Survey of India (SLUSI): Being
-                      implemented by RFS Division
-                    </li>
-                    <li>
-                      National Rainfed Area Authority (NRAA): Being implemented
-                      by RFS Division
-                    </li>
-                    <li>
-                      National Centre of Organic Farming (NCOF): Being
-                      implemented by INM Division
-                    </li>
-                    <li>
-                      Central Fertilizer Quality Control and Training Institute
-                      (CFQC&TI): implemented by INM Division
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <a class="navbar-brand">AgriGo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'about'%}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Features
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="{% url 'policy' %}">Schemes</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Supply Chain</a></li>
+              <li><a class="dropdown-item" href="#">Finance</a></li>
+              <li>
+                <a class="dropdown-item" href="{% url 'weather' %}">Weather</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
+    </div>
+  </nav>
+  <br />
 
-      <div class="container px-4 text-center">
-        <div class="row gx-5">
-          <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="p-3">
-              <!-- Pradhan Mantri Krishi Sinchai Yojana (PMKSY) -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample3"
-                  aria-expanded="false"
-                  aria-controls="collapseExample3"
-                >
-                  <p class="fw-bold">
-                    Pradhan Mantri Krishi Sinchai Yojana (PMKSY)
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-sm-12" id="welcome">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                  <div class="container px-4 text-center">
+                    <div class="row gx-5">
+                      <div class="col-lg-8 col-md-10 col-sm-12">
+                        <div class="p-3">
+                          <p>
+                            <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                              <p class="fw-bold">National Agriculture Market (eNAM)</p>
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseExample1">
+                            <div class="card card-body">
+                              <p class="fw-semibold">National Agriculture Market (eNAM)</p>
+                              <p>
+                                National Agriculture Market (eNAM) is a pan-India electronic trading portal that
+                                networks
+                                the existing APMC mandis to create a unified national market for agricultural
+                                commodities.
+                                Small Farmers Agribusiness Consortium (SFAC) is the lead agency for implementing eNAM
+                                under
+                                the aegis of the Ministry of Agriculture and Farmers' Welfare, Government of India.
+                              </p>
+                              <p class="fw-bold">Vision</p>
+                              <ul>
+                                <li>To promote uniformity in agriculture marketing by streamlining procedures across the
+                                  integrated markets</li>
+                                <li>To remove information asymmetry between buyers and sellers, promoting real-time
+                                  price discovery based on actual demand and supply</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   </p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample3">
-                <div class="card card-body">
-                  <p class="fw-semibold">
-                    Pradhan Mantri Krishi Sinchai Yojana (PMKSY)
-                  </p>
-                  has been formulated with the vision of extending the coverage
-                  of irrigation ‘Har Khet ko pani’ and improving water use
-                  efficiency ‘More crop per drop’ in a focused manner with
-                  end-to-end solution on source creation, distribution,
-                  management, field application and extension activities.
-                  <p class="fw-bold">Objectives:</p>
-
-                  <ul>
-                    <li>
-                      Achieve convergence of investments in irrigation at the
-                      field level (preparation of district level and, if
-                      required, sub district level water use plans).
-                    </li>
-                    <li>
-                      Enhance the physical access of water on the farm and
-                      expand cultivable area under assured irrigation (Har Khet
-                      ko pani).
-                    </li>
-                    <li>
-                      Integration of water source, distribution and its
-                      efficient use, to make best use of water through
-                      appropriate technologies and practices.
-                    </li>
-                    <li>
-                      Enhance the adoption of precision – irrigation and other
-                      water saving technologies (More crop per drop).
-                    </li>
-                    <li>
-                      Enhance recharge of aquifers and introduce sustainable
-                      water conservation practices.
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="p-3">
-              <!-- Paramparagat Krishi Vikas Yojana (PKVY) -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample4"
-                  aria-expanded="false"
-                  aria-controls="collapseExample4"
-                >
-                  <p class="fw-bold">Paramparagat Krishi Vikas Yojana (PKVY)</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample4">
-                <div class="card card-body">
-                  <p class="fw-semibold">
-                    Paramparagat Krishi Vikas Yojana (PKVY)
+
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                  <div class="col">
+                    <div class="p-3">
+                      <p>
+                        <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                          <p class="fw-bold">National Mission for Sustainable Agriculture (NMSA)</p>
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseExample2">
+                        <div class="card card-body">
+                          <p class="fw-semibold">National Mission for Sustainable Agriculture (NMSA)</p>
+                          <p>
+                            National Mission for Sustainable Agriculture (NMSA) has been formulated for enhancing
+                            agricultural
+                            productivity, especially in rainfed areas, focusing on integrated farming, water use
+                            efficiency,
+                            soil health management, and synergizing resource conservation.
+                          </p>
+                          <p class="fw-bold">Vision</p>
+                          <ul>
+                            <li>Rainfed Area Development (RAD): RAD is being implemented by RFS Division</li>
+                            <li>Soil Health Management (SHM): SHM is being implemented by INM Division</li>
+                            <li>Paramparagat Krishi Vikas Yojana (PKVY): PKVY is being implemented by INM Division</li>
+                            <li>Soil and Land Use Survey of India (SLUSI): Being implemented by RFS Division</li>
+                            <li>National Rainfed Area Authority (NRAA): Being implemented by RFS Division</li>
+                            <li>National Centre of Organic Farming (NCOF): Being implemented by INM Division</li>
+                            <li>Central Fertilizer Quality Control and Training Institute (CFQC&TI): implemented by INM
+                              Division</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   </p>
-                  The Paramparagat Krishi Vikas Yojana (PKVY), an initiative to
-                  promote organic farming in the country, was launched by the
-                  NDA government in 2015. According to the scheme, farmers will
-                  be encouraged to form groups or clusters and take to organic
-                  farming methods over large areas in the country.
-                  <p class="fw-bold">Objectives:</p>
-
-                  <ul>
-                    <li>
-                      Promotion of commercial organic production through
-                      certified organic farming.
-                    </li>
-                    <li>
-                      The produce will be pesticide residue free and will
-                      contribute to improve the health of consumer.
-                    </li>
-                    <li>
-                      It will motivate the farmers for natural resource
-                      mobilization for input production.
-                    </li>
-                    <li>
-                      It will raise farmer’s income and create potential market
-                      for traders.
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="container overflow-hidden text-center">
-        <div class="row gx-5">
-          <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="p-3">
-              <!-- Pradhan Mantri Fasal Bima Yojana (PMFBY) -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample5"
-                  aria-expanded="false"
-                  aria-controls="collapseExample5"
-                >
-                  <p class="fw-bold">
-                    Pradhan Mantri Fasal Bima Yojana (PMFBY))
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                  <div class="container px-4 text-center">
+                    <div class="row gx-5">
+                      <div class="col-lg-8 col-md-10 col-sm-12">
+                        <div class="p-3">
+                          <p>
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                              <p class="fw-bold">Pradhan Mantri Krishi Sinchai Yojana (PMKSY)</p>
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseExample3">
+                            <div class="card card-body">
+                              <p class="fw-semibold">Pradhan Mantri Krishi Sinchai Yojana (PMKSY)</p>
+                              <p>
+                                Pradhan Mantri Krishi Sinchai Yojana (PMKSY) has been formulated with the vision of
+                                extending
+                                the coverage of irrigation "Har Khet ko pani" and improving water use efficiency "More
+                                crop
+                                per drop" in a focused manner with end-to-end solutions on source creation,
+                                distribution,
+                                management, field application, and extension activities.
+                              </p>
+                              <p class="fw-bold">Objectives:</p>
+                              <ul>
+                                <li>Achieve convergence of investments in irrigation at the field level (preparation of
+                                  district-level and, if required, sub-district level water use plans)</li>
+                                <li>Enhance the physical access of water on the farm and expand cultivable area under
+                                  assured irrigation (Har Khet ko pani)</li>
+                                <li>Integration of water source, distribution, and its efficient use, to make the best
+                                  use of water through appropriate technologies and practices</li>
+                                <li>Enhance the adoption of precision-irrigation and other water-saving technologies
+                                  (More crop per drop)</li>
+                                <li>Enhance the recharge of aquifers and introduce sustainable water conservation
+                                  practices</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   </p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample5">
-                <div class="card card-body">
-                  <p class="fw-semibold">
-                    Pradhan Mantri Fasal Bima Yojana (PMFBY))
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">
+                  <div class="col">
+                    <div class="p-3">
+                      <p>
+                        <button class="btn btn-primary btn-block" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                          <p class="fw-bold">National Mission for Sustainable Agriculture (NMSA)</p>
+                        </button>
+                      </p>
+                      <div class="collapse" id="collapseExample4">
+                        <div class="card card-body">
+                          <p class="fw-semibold">National Mission for Sustainable Agriculture (NMSA)</p>
+                          <p>
+                            National Mission for Sustainable Agriculture (NMSA) has been formulated for enhancing
+                            agricultural
+                            productivity, especially in rainfed areas, focusing on integrated farming, water use
+                            efficiency,
+                            soil health management, and synergizing resource conservation.
+                          </p>
+                          <p class="fw-bold">Vision</p>
+                          <ul>
+                            <li>Rainfed Area Development (RAD): RAD is being implemented by RFS Division</li>
+                            <li>Soil Health Management (SHM): SHM is being implemented by INM Division</li>
+                            <li>Paramparagat Krishi Vikas Yojana (PKVY): PKVY is being implemented by INM Division</li>
+                            <li>Soil and Land Use Survey of India (SLUSI): Being implemented by RFS Division</li>
+                            <li>National Rainfed Area Authority (NRAA): Being implemented by RFS Division</li>
+                            <li>National Centre of Organic Farming (NCOF): Being implemented by INM Division</li>
+                            <li>Central Fertilizer Quality Control and Training Institute (CFQC&TI): implemented by INM
+                              Division</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                   </p>
-                  Is the government sponsored crop insurance scheme that
-                  integrates multiple stakeholders on a single platform.
-                  <p class="fw-bold">Objectives:</p>
-
-                  <ul>
-                    <li>
-                      To provide insurance coverage and financial support to the
-                      farmers in the event of failure of any of the notified
-                      crop as a result of natural calamities, pests & diseases.
-                    </li>
-                    <li>
-                      To stabilise the income of farmers to ensure their
-                      continuance in farming.
-                    </li>
-                    <li>
-                      To encourage farmers to adopt innovative and modern
-                      agricultural practices.
-                    </li>
-                    <li>To ensure flow of credit to the agriculture sector.</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3">
-              <!-- Gramin Bhandaran Yojana -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample6"
-                  aria-expanded="false"
-                  aria-controls="collapseExample6"
-                >
-                  <p class="fw-bold">Gramin Bhandaran Yojana</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample6">
-                <div class="card card-body">
-                  <p class="fw-semibold">Gramin Bhandaran Yojana</p>
-                  Gramin Bhandaran Yojana, or Rural Godown Scheme, is an Indian
-                  government initiative to offer subsidies to individuals or
-                  organizations which build or repair rural godowns.
-                  <p class="fw-bold">Objectives:</p>
-
-                  <ul>
-                    <li>
-                      Create scientific storage capacity with allied facilities
-                      in rural areas.
-                    </li>
-                    <li>
-                      To meet the requirements of farmers for storing farm
-                      produce, processed farm produce and agricultural inputs.
-                    </li>
-                    <li>
-                      Promotion of grading, standardization and quality control
-                      of agricultural produce to improve their marketability.
-                    </li>
-                    <li>
-                      Prevent distress sale immediately after harvest by
-                      providing the facility of pledge financing and marketing
-                      credit by strengthening agricultural marketing
-                      infrastructure in the country.
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container overflow-hidden text-center">
-        <div class="row gx-5">
-          <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="p-3">
-              <!-- Livestock insurance Scheme -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample7"
-                  aria-expanded="false"
-                  aria-controls="collapseExample7"
-                >
-                  <p class="fw-bold">Livestock insurance Scheme</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample7">
-                <div class="card card-body">
-                  <p class="fw-semibold">Livestock insurance Scheme</p>
-                  This scheme aims to provide protection mechanism to the
-                  farmers and cattle rearers against any eventual loss of their
-                  animals due to death and to demonstrate the benefit of the
-                  insurance of livestock to the people and popularize it with
-                  the ultimate goal of attaining qualitative improvement in
-                  livestock and their products.
-                  <p class="fw-bold">Objectives:</p>
-
-                  <ul>
-                    <li>
-                      The rural insurance policy is designed to offer insurance
-                      cover to indigenous cattle owned by farmers, cooperative
-                      societies, dairy farms and the like.
-                    </li>
-                    <li>
-                      Security in case of death of cattle shall be provided for
-                      the following: –
-                    </li>
-                    <ul>
-                      <li>
-                        Natural accidents. (Flood, famine, earthquake, etc.)
-                      </li>
-                      <li>
-                        Unpredictable circumstances. (Accidental in Origin.)
-                      </li>
-                      <li>Surgical Operations.</li>
-                      <li>Terrorist Act.</li>
-                      <li>Strikes and Riots</li>
-                      <li>Civil Commotion risk</li>
-                    </ul>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3">
-              <!-- Micro Irrigation Fund (MIF) -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample8"
-                  aria-expanded="false"
-                  aria-controls="collapseExample8"
-                >
-                  <p class="fw-bold">Micro Irrigation Fund (MIF)</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample8">
-                <div class="card card-body">
-                  <p class="fw-semibold">Micro Irrigation Fund (MIF)</p>
-                  The government approved a dedicated Rs5,000 crore fund to
-                  bring more land area under micro-irrigation as part of its
-                  objective to boost agriculture production and farmers income.
-                  The fund has been set up under NABARD, which will provide this
-                  amount to states on concessional rate of interest to promote
-                  micro-irrigation, which currently has a coverage of only 10
-                  million hectares as against the potential of 70 million
-                  hectares.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container overflow-hidden text-center">
-        <div class="row gx-5">
-          <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="p-3">
-              <!-- Soil Health Card Scheme -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample9"
-                  aria-expanded="false"
-                  aria-controls="collapseExample9"
-                >
-                  <p class="fw-bold">Soil Health Card Scheme</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample9">
-                <div class="card card-body">
-                  <p class="fw-semibold">Soil Health Card Scheme</p>
-                  The scheme has been introduced to assist State Governments to
-                  issue Soil Health Cards to all farmers in the country.The Soil
-                  Health Cards provide information to farmers on nutrient status
-                  of their soil along with recommendation on appropriate dosage
-                  of nutrients to be applied for improving soil health and its
-                  fertility.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3">
-              <!-- Neem Coated Urea (NCU) -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample10"
-                  aria-expanded="false"
-                  aria-controls="collapseExample10"
-                >
-                  <p class="fw-bold">Neem Coated Urea (NCU)</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample10">
-                <div class="card card-body">
-                  <p class="fw-semibold"></p>
-                  This scheme is initiated to regulate use of urea, enhance
-                  availability of nitrogen to the crop and reduce cost of
-                  fertilizer application. NCU slows down the release of
-                  fertilizer and makes it available to the crop in an effective
-                  manner. The entire quantity of domestically manufactured and
-                  imported urea is now neem coated. It reduces the cost of
-                  cultivation and improves soil health management.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container overflow-hidden text-center">
-        <div class="row gx-5">
-          <div class="col-lg-8 col-md-10 col-sm-12">
-            <div class="p-3">
-              <!-- Rainfed Area Development Programme (RADP) -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample11"
-                  aria-expanded="false"
-                  aria-controls="collapseExample11"
-                >
-                  <p class="fw-bold">
-                    Rainfed Area Development Programme (RADP)
-                  </p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample11">
-                <div class="card card-body">
-                  Rainfed Area Development Programme (RADP) was implemented as a
-                  sub-scheme under Rashtriya Krishi Vikas Yojana (RKVY).
-                  <p class="fw-semibold">Aim</p>
-                  <ul>
-                    <li>
-                      To improve quality of life of farmers’ especially, small
-                      and marginal farmers by offering a complete package of
-                      activities to maximize farm returns.
-                    </li>
-                    <li>
-                      Increasing agricultural productivity of rainfed areas in a
-                      sustainable manner by adopting appropriate farming system
-                      based approaches.
-                    </li>
-                    <li>
-                      To minimise the adverse impact of possible crop failure
-                      due to drought, flood or un-even rainfall distribution
-                      through diversified and composite farming system.
-                    </li>
-                    <li>
-                      Restoration of confidence in rainfed agriculture by
-                      creating sustained employment opportunities through
-                      improved on-farm technologies and cultivation practices
-                    </li>
-                    <li>
-                      Enhancement of farmer’s income and livelihood support for
-                      reduction of poverty in rainfed areas
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3">
-              <!-- Farm Bills -->
-              <p>
-                <button
-                  class="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample12"
-                  aria-expanded="false"
-                  aria-controls="collapseExample12"
-                >
-                  <p class="fw-bold">Farm Bills</p>
-                </button>
-              </p>
-              <div class="collapse" id="collapseExample12">
-                <div class="card card-body">
-                  <p class="fw-semibold">
-                    Farmers’ Produce Trade and Commerce (Promotion and
-                    Facilitation) Act, 2020
-                  </p>
-                  <ul>
-                    <li>
-                      Expands the scope of trade areas of farmers’ produce from
-                      select areas to “any place of production, collection,
-                      aggregation”.
-                    </li>
-                    <li>
-                      Allows electronic trading and e-commerce of scheduled
-                      farmers’ produce.
-                    </li>
-                    <li>
-                      Prohibits state governments from levying any market fee,
-                      cess, or levy on farmers, traders, and electronic trading
-                      platforms for the trade of farmers’ produce conducted in
-                      an ‘outside trade area’.
-                    </li>
-                    <li>
-                      Restoration of confidence in rainfed agriculture by
-                      creating sustained employment opportunities through
-                      improved on-farm technologies and cultivation practices
-                    </li>
-                  </ul>
-                  <p class="fw-semibold">
-                    Farmers (Empowerment and Protection) Agreement on Price
-                    Assurance and Farm Services Act, 2020
-                  </p>
-                  <ul>
-                    <li>
-                      Provides a legal framework for farmers to enter into
-                      pre-arranged contracts with buyers including mention of
-                      pricing.
-                    </li>
-                    <li>Defines a dispute resolution mechanism.</li>
-                  </ul>
-                  <p class="fw-semibold">
-                    Essential Commodities (Amendment) Act, 2020
-                  </p>
-                  Removes foodstuff such as cereals, pulses, potato, onions,
-                  edible oilseeds, and oils, from the list of essential
-                  commodities, removing stockholding limits on agricultural
-                  items produced by Horticulture techniques except under
-                  “extraordinary circumstances” requires that imposition of any
-                  stock limit on agricultural produce only occur if there is a
-                  steep price rise.
                 </div>
               </div>
             </div>
@@ -749,5 +317,425 @@
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">
+          <div class="col">
+            <div class="p-3">
+              <!-- Paramparagat Krishi Vikas Yojana (PKVY) -->
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4"
+                aria-expanded="false" aria-controls="collapseExample4">
+                <p class="fw-bold">Paramparagat Krishi Vikas Yojana (PKVY)</p>
+              </button>
+              <div class="collapse" id="collapseExample4">
+                <div class="card card-body">
+                  <p class="fw-semibold">
+                    Paramparagat Krishi Vikas Yojana (PKVY)
+                  </p>
+                  <p>
+                    The Paramparagat Krishi Vikas Yojana (PKVY), an initiative to promote organic farming in the
+                    country, was launched by the NDA government in 2015. According to the scheme, farmers will be
+                    encouraged to form groups or clusters and take up organic farming methods over large areas in the
+                    country.
+                  </p>
+                  <p class="fw-bold">Objectives:</p>
+                  <ul>
+                    <li>Promotion of commercial organic production through certified organic farming.</li>
+                    <li>Produce will be pesticide residue free and will contribute to improving the health of consumers.
+                    </li>
+                    <li>Motivate farmers for natural resource mobilization for input production.</li>
+                    <li>Raise farmers' income and create a potential market for traders.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">
+          <div class="container overflow-hidden text-center">
+            <div class="row gx-5">
+              <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="p-3">
+                  <!-- Pradhan Mantri Fasal Bima Yojana (PMFBY) -->
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+                    <p class="fw-bold">Pradhan Mantri Fasal Bima Yojana (PMFBY)</p>
+                  </button>
+                  <div class="collapse" id="collapseExample5">
+                    <div class="card card-body">
+                      <p class="fw-semibold">Pradhan Mantri Fasal Bima Yojana (PMFBY)</p>
+                      <p>
+                        Pradhan Mantri Fasal Bima Yojana (PMFBY) is a government-sponsored crop insurance scheme that
+                        integrates multiple stakeholders on a single platform.
+                      </p>
+                      <p class="fw-bold">Objectives:</p>
+                      <ul>
+                        <li>Provide insurance coverage and financial support to farmers in the event of crop failure due
+                          to natural calamities, pests & diseases.</li>
+                        <li>Stabilize farmers' income to ensure their continuance in farming.</li>
+                        <li>Encourage farmers to adopt innovative and modern agricultural practices.</li>
+                        <li>Ensure the flow of credit to the agriculture sector.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">
+          <div class="col">
+            <div class="p-3">
+              <!-- Gramin Bhandaran Yojana -->
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6"
+                aria-expanded="false" aria-controls="collapseExample6">
+                <p class="fw-bold">Gramin Bhandaran Yojana</p>
+              </button>
+              <div class="collapse" id="collapseExample6">
+                <div class="card card-body">
+                  <p class="fw-semibold">Gramin Bhandaran Yojana</p>
+                  <p>
+                    Gramin Bhandaran Yojana, or Rural Godown Scheme, is an Indian government initiative to offer
+                    subsidies to individuals or organizations that build or repair rural godowns.
+                  </p>
+                  <p class="fw-bold">Objectives:</p>
+                  <ul>
+                    <li>Create scientific storage capacity with allied facilities in rural areas.</li>
+                    <li>Meet the requirements of farmers for storing farm produce, processed farm produce, and
+                      agricultural inputs.</li>
+                    <li>Promote grading, standardization, and quality control of agricultural produce to improve their
+                      marketability.</li>
+                    <li>Prevent distress sale immediately after harvest by providing the facility of pledge financing
+                      and marketing credit by strengthening agricultural marketing infrastructure in the country.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">
+          <div class="col">
+            <div class="p-3">
+              <!-- National Agriculture Market (eNAM) -->
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7"
+                aria-expanded="false" aria-controls="collapseExample7">
+                <p class="fw-bold">National Agriculture Market (eNAM)</p>
+              </button>
+              <div class="collapse" id="collapseExample7">
+                <div class="card card-body">
+                  <p class="fw-semibold">National Agriculture Market (eNAM)</p>
+                  <p>
+                    National Agriculture Market (eNAM) is an online trading platform for agricultural commodities in
+                    India. It provides a common platform for buyers and sellers across the country to trade in a
+                    transparent and efficient manner.
+                  </p>
+                  <p class="fw-bold">Objectives:</p>
+                  <ul>
+                    <li>Integrate APMCs (Agricultural Produce Market Committees) across the country under a single
+                      electronic platform.</li>
+                    <li>Promote uniformity and standardization in trading practices.</li>
+                    <li>Reduce information asymmetry and improve price discovery for farmers.</li>
+                    <li>Facilitate direct and transparent buying and selling of agricultural produce.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="p-3">
+                  <!-- Livestock insurance Scheme -->
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
+                    <p class="fw-bold">Livestock insurance Scheme</p>
+                  </button>
+                  <div class="collapse" id="collapseExample7">
+                    <div class="card card-body">
+                      <p class="fw-semibold">Livestock insurance Scheme</p>
+                      <p>
+                        This scheme aims to provide a protection mechanism to the farmers and cattle rearers against any
+                        eventual loss of their animals due to death and to demonstrate the benefit of the insurance of
+                        livestock to the people and popularize it with the ultimate goal of attaining qualitative
+                        improvement
+                        in livestock and their products.
+                      </p>
+                      <p class="fw-bold">Objectives:</p>
+                      <ul>
+                        <li>The rural insurance policy is designed to offer insurance cover to indigenous cattle owned
+                          by
+                          farmers, cooperative societies, dairy farms, and the like.</li>
+                        <li>Security in case of death of cattle shall be provided for the following:</li>
+                        <ul>
+                          <li>Natural accidents. (Flood, famine, earthquake, etc.)</li>
+                          <li>Unpredictable circumstances. (Accidental in Origin.)</li>
+                          <li>Surgical Operations.</li>
+                          <li>Terrorist Act.</li>
+                          <li>Strikes and Riots</li>
+                          <li>Civil Commotion risk</li>
+                        </ul>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="p-3">
+            <!-- Micro Irrigation Fund (MIF) -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample8"
+              aria-expanded="false" aria-controls="collapseExample8">
+              <p class="fw-bold">Micro Irrigation Fund (MIF)</p>
+            </button>
+            <div class="collapse" id="collapseExample8">
+              <div class="card card-body">
+                <p class="fw-semibold">Micro Irrigation Fund (MIF)</p>
+                <p>
+                  The government approved a dedicated Rs5,000 crore fund to bring more land area under micro-irrigation
+                  as
+                  part of its objective to boost agriculture production and farmers' income. The fund has been set up
+                  under
+                  NABARD, which will provide this amount to states on a concessional rate of interest to promote
+                  micro-irrigation, which currently has a coverage of only 10 million hectares as against the potential
+                  of
+                  70 million hectares.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-lg-8 col-md-10 col-sm-12">
+                <div class="p-3">
+                  <!-- Soil Health Card Scheme -->
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample9" aria-expanded="false" aria-controls="collapseExample9">
+                    <p class="fw-bold">Soil Health Card Scheme</p>
+                  </button>
+                  <div class="collapse" id="collapseExample9">
+                    <div class="card card-body">
+                      <p class="fw-semibold">Soil Health Card Scheme</p>
+                      <p>
+                        The scheme has been introduced to assist State Governments to issue Soil Health Cards to all
+                        farmers
+                        in the country. The Soil Health Cards provide information to farmers on the nutrient status of
+                        their
+                        soil along with recommendations on the appropriate dosage of nutrients to be applied for
+                        improving
+                        soil health and fertility.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="p-3">
+            <!-- Neem Coated Urea (NCU) -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample10"
+              aria-expanded="false" aria-controls="collapseExample10">
+              <p class="fw-bold">Neem Coated Urea (NCU)</p>
+            </button>
+            <div class="collapse" id="collapseExample10">
+              <div class="card card-body">
+                <p class="fw-semibold">Neem Coated Urea (NCU)</p>
+                <p>
+                  This scheme is initiated to regulate the use of urea, enhance the availability of nitrogen to the
+                  crop,
+                  and reduce the cost of fertilizer application. NCU slows down the release of fertilizer and makes it
+                  available to the crop in an effective manner. The entire quantity of domestically manufactured and
+                  imported
+                  urea is now neem coated. It reduces the cost of cultivation and improves soil health management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <div class="p-3">
+            <!-- Rainfed Area Development Programme (RADP) -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample11"
+              aria-expanded="false" aria-controls="collapseExample11">
+              <p class="fw-bold">Rainfed Area Development Programme (RADP)</p>
+            </button>
+            <div class="collapse" id="collapseExample11">
+              <div class="card card-body">
+                <p class="fw-semibold">Rainfed Area Development Programme (RADP)</p>
+                <p>
+                  Rainfed Area Development Programme (RADP) was implemented as a sub-scheme under Rashtriya Krishi Vikas
+                  Yojana (RKVY).
+                </p>
+                <p class="fw-semibold">Aim</p>
+                <ul>
+                  <li>
+                    To improve the quality of life of farmers, especially small and marginal farmers, by offering a
+                    complete
+                    package of activities to maximize farm returns.
+                  </li>
+                  <li>
+                    Increasing agricultural productivity of rainfed areas in a sustainable manner by adopting
+                    appropriate
+                    farming system-based approaches.
+                  </li>
+                  <li>
+                    To minimize the adverse impact of possible crop failure due to drought, flood, or uneven rainfall
+                    distribution through diversified and composite farming systems.
+                  </li>
+                  <li>
+                    Restoration of confidence in rainfed agriculture by creating sustained employment opportunities
+                    through
+                    improved on-farm technologies and cultivation practices.
+                  </li>
+                  <li>
+                    Enhancement of farmers' income and livelihood support for the reduction of poverty in rainfed areas.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+        <div class="col">
+          <div class="p-3">
+            <!-- Farm Bills -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample12"
+              aria-expanded="false" aria-controls="collapseExample12">
+              <p class="fw-bold">Farm Bills</p>
+            </button>
+            <div class="collapse" id="collapseExample12">
+              <div class="card card-body">
+                <p class="fw-semibold">Farmers’ Produce Trade and Commerce (Promotion and Facilitation) Act, 2020</p>
+                <ul>
+                  <li>
+                    Expands the scope of trade areas of farmers’ produce from select areas to "any place of production,
+                    collection, aggregation".
+                  </li>
+                  <li>
+                    Allows electronic trading and e-commerce of scheduled farmers’ produce.
+                  </li>
+                  <li>
+                    Prohibits state governments from levying any market fee, cess, or levy on farmers, traders, and
+                    electronic trading platforms for the trade of farmers’ produce conducted in an 'outside trade area'.
+                  </li>
+                  <li>
+                    Restoration of confidence in rainfed agriculture by creating sustained employment opportunities
+                    through improved on-farm technologies and cultivation practices.
+                  </li>
+                </ul>
+                <p class="fw-semibold">Farmers (Empowerment and Protection) Agreement on Price Assurance and Farm
+                  Services Act, 2020</p>
+                <ul>
+                  <li>
+                    Provides a legal framework for farmers to enter into pre-arranged contracts with buyers including
+                    mention of pricing.
+                  </li>
+                  <li>Defines a dispute resolution mechanism.</li>
+                </ul>
+                <p class="fw-semibold">Essential Commodities (Amendment) Act, 2020</p>
+                <p>
+                  Removes foodstuff such as cereals, pulses, potato, onions, edible oilseeds, and oils from the list of
+                  essential commodities, removing stockholding limits on agricultural items produced by Horticulture
+                  techniques except under "extraordinary circumstances". Requires that imposition of any stock limit on
+                  agricultural produce only occur if there is a steep price rise.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          <p>A GDK Group product</p>
+          <p>Copyright © 2023</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
