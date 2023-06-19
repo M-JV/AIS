@@ -120,9 +120,10 @@
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script>
+
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">A.I.S</a>
+      <a class="navbar-brand" href="#">AgriGo</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -146,7 +147,7 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'policy' %}">Policies</a></li>
               <li><a class="dropdown-item" href="#">Supply Chain</a></li>
-              <li><a class="dropdown-item" href="#">Banking</a></li>
+              <li><a class="dropdown-item" href="{%url 'banks'%}">Banking</a></li>
               <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
             </ul>
           </li>
@@ -189,17 +190,28 @@
         <div class="card contact-info">
           <div class="card-body">
             <h6 class="card-title">Address</h6>
-            <p class="card-text">123 Main Street, City, State, Country</p>
+            <p class="card-text"><b>S6 CSE, College of Engineering Aranmula</p>
             <h6 class="card-title">Phone</h6>
-            <p class="card-text">+1 123-456-7890</p>
+            <p class="card-text">+91 xxxxx-xxxxx</p>
             <h6 class="card-title">Email</h6>
-            <p class="card-text">info@example.com</p>
+            <p class="card-text">ais_help@gmail.com</b></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+
+  <footer class="bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+          <p>A GDK Group product</p>
+          <p>Copyright © 2023</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
