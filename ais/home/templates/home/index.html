@@ -123,6 +123,7 @@
               <li><a class="dropdown-item" href="#">Supply Chain</a></li>
               <li><a class="dropdown-item" href="{%url 'banks'%}">Finance</a></li>
               <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
+              <li><a class="dropdown-item" href="{% url 'home' %}">Distributors</a></li>
             </ul>
           </li>
         </ul>
@@ -185,11 +186,11 @@
           <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Distributor Login</h5>
+                <h5 class="card-title">Distributors</h5>
                 <p class="card-text">
                   Distributor and wholesale dealers can login here to make requests for the crops they need
                 </p>
-                <a href="#" class="btn btn-primary">Login</a>
+                <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
               </div>
             </div>
           </div>
