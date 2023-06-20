@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# login and Signup
 class Distributor(models.Model):
     distributorName = models.CharField(max_length=20)
     distributorEmail = models.EmailField(max_length=50)
@@ -19,3 +19,18 @@ class TemporaryD(models.Model):
 
     class Meta:
         db_table = 'Distributor Temporary Data'
+
+# Requests
+class Requests(models.Model):
+    requestName = models.CharField(max_length=20)
+    requestPrice = models.FloatField()
+    distributorId = models.IntegerField()
+    requestDetails = models.TextField()
+    @staticmethod
+    def getAllRequests():
+        return Requests.objects.all()
+
+    class Meta:
+        db_table = 'Requests Info'
+
+
