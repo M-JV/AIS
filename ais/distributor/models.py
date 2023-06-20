@@ -6,12 +6,10 @@ class Distributor(models.Model):
     distributorEmail = models.EmailField(max_length=50)
     distributorContact = models.CharField(max_length=11)
     distributorPassword = models.CharField(max_length=20)
-    distributorToken = models.CharField(max_length=4,default='0000')
+    distributorToken = models.CharField(max_length=4, default='0000')
     
-
     class Meta:
         db_table = 'Distributor Info'
-
 
 class TemporaryD(models.Model):
     distributorName = models.CharField(max_length=20)
@@ -24,13 +22,12 @@ class TemporaryD(models.Model):
 class Requests(models.Model):
     requestName = models.CharField(max_length=20)
     requestPrice = models.FloatField()
-    distributorId = models.IntegerField()
+    distributor = models.ForeignKey(Distributor, on_delete=models.CASCADE, default=1)
     requestDetails = models.TextField()
+
     @staticmethod
     def getAllRequests():
         return Requests.objects.all()
 
     class Meta:
         db_table = 'Requests Info'
-
-

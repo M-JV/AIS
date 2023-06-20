@@ -93,10 +93,18 @@
     .carousel-item {
       text-align: center;
     }
+
+    /* Footer styles */
+    footer {
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin-bottom: 5px;
+    }
   </style>
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">AgriGo</a>
@@ -135,7 +143,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-md-10 col-sm-12" id="welcome">
-        <h2 class="card-title">Welcome to Agriculture Information System</h2>
+        <h2 class="card-title">Welcome to the Agriculture Information System</h2>
         <br />
         <p class="lead">Democratizing farming</p>
         <div class="row justify-content-center">
@@ -143,36 +151,29 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Signup</h5>
-                <p class="card-text">
-                  Loan information 
-                </p>
+                <p class="card-text">Loan information</p>
                 <a href="{%url 'signup' %}" class="btn btn-primary">Click Here</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Login</h5>
-                <p class="card-text">
-                  Government Schemes for farmers
-                </p>
-                <a href="{% url 'login' %}" class="btn btn-primary">Click Here</a>
               </div>
             </div>
           </div>
           <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Request Listing</h5>
-                <p class="card-text">
-                  Requirements of distributors and wholesale sellers
-                </p>
-                <a href="#" class="btn btn-primary">Click Here</a>
+                <h5 class="card-title">Login</h5>
+                <p class="card-text">Government Schemes for farmers</p>
+                <a href="{% url 'login' %}" class="btn btn-primary">Click Here</a>
               </div>
             </div>
           </div>
-          
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Request Listing</h5>
+                <p class="card-text">Requirements of distributors and wholesale sellers</p>
+                <a href="{% url 'all_requests' %}" class="btn btn-primary">Click Here</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -186,9 +187,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Testimonial 1</h5>
-                  <p class="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac velit ac purus condimentum fermentum. Suspendisse potenti.
-                  </p>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac velit ac purus condimentum fermentum. Suspendisse potenti.</p>
                   <p class="card-text">- John Doe</p>
                 </div>
               </div>
@@ -197,9 +196,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Testimonial 2</h5>
-                  <p class="card-text">
-                    Nullam fermentum ligula at libero imperdiet, sit amet molestie justo lobortis. Proin vestibulum tellus a viverra convallis.
-                  </p>
+                  <p class="card-text">Nullam fermentum ligula at libero imperdiet, sit amet molestie justo lobortis. Proin vestibulum tellus a viverra convallis.</p>
                   <p class="card-text">- Jane Smith</p>
                 </div>
               </div>
@@ -208,9 +205,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Testimonial 3</h5>
-                  <p class="card-text">
-                    Donec ullamcorper, risus in aliquet gravida, elit sem ullamcorper lectus, sit amet ultrices lacus massa in lorem.
-                  </p>
+                  <p class="card-text">Donec ullamcorper, risus in aliquet gravida, elit sem ullamcorper lectus, sit amet ultrices lacus massa in lorem.</p>
                   <p class="card-text">- Mark Johnson</p>
                 </div>
               </div>
@@ -227,7 +222,6 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <footer class="bg-dark text-light">
@@ -240,7 +234,5 @@
       </div>
     </div>
   </footer>
-  
-  
 </body>
 </html>
