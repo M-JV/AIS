@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'weather',
     'policy',
     'banks',
+    'supply',
+    'distributor'
 ]
 
 MIDDLEWARE = [
