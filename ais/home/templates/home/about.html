@@ -103,9 +103,10 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'policy' %}">Policies</a></li>
-              <li><a class="dropdown-item" href="#">Supply Chain</a></li>
+              <li><a class="dropdown-item" href="{% url 'all_requests' %}">Supply Chain</a></li>
               <li><a class="dropdown-item" href="{%url 'banks'%}">Banking</a></li>
               <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
+              <li><a class="dropdown-item" href="{% url 'home' %}">Distributors</a></li>
             </ul>
           </li>
         </ul>
@@ -140,9 +141,9 @@
               <div class="team-member-name">Joe Varghese Abraham</div>
               <div class="team-member-designation">CIO</div>
             </div>
-            <div class="team-member">
+            {% comment %} <div class="team-member">
               <div class="team-member-name">ChatGPT</div>
-              <div class="team-member-designation">Senior Developer</div>
+              <div class="team-member-designation">Senior Developer</div> {% endcomment %}
             </div>
           </div>
         </div>
