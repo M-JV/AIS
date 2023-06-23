@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{%url 'about'%}">About Us</a>
@@ -59,7 +59,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'policy' %}">Schemes</a></li>
-                            <li><a class="dropdown-item" href="#">Supply Chain</a></li>
+                            <li><a class="dropdown-item" href="{% url 'all_requests' %}">Supply Chain</a></li>
                             <li><a class="dropdown-item" href="{%url 'banks'%}">Finance</a></li>
                             <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
                             <li><a class="dropdown-item" href="{% url 'home' %}">Distributors</a></li>

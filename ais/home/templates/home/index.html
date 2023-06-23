@@ -93,6 +93,15 @@
     .carousel-item {
       text-align: center;
     }
+
+        /* Footer styles */
+    footer {
+      padding: 20px 0;
+    }
+
+    footer p {
+      margin-bottom: 5px;
+    }
   </style>
 </head>
 <body>
@@ -120,7 +129,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{% url 'policy' %}">Schemes</a></li>
-              <li><a class="dropdown-item" href="#">Supply Chain</a></li>
+              <li><a class="dropdown-item" href="{% url 'all_requests' %}">Supply Chain</a></li>
               <li><a class="dropdown-item" href="{%url 'banks'%}">Finance</a></li>
               <li><a class="dropdown-item" href="{% url 'weather' %}">Weather</a></li>
               <li><a class="dropdown-item" href="{% url 'home' %}">Distributors</a></li>
